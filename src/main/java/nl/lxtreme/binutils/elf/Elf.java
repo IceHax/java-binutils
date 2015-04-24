@@ -95,6 +95,12 @@ public class Elf
   }
 
   // METHODS
+  public void readOffset(long offset,byte[] array) throws IOException{
+	  this.efile.seek(offset);
+	  this.efile.setEndiannes( this.ehdr.isLittleEndian() );
+	  
+	  efile.readFullyE(array);
+  }
 
   /**
    * @param array
